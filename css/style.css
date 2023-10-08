@@ -21,8 +21,25 @@ body{
     height: 100vmin;
     border-radius:50%;
     background-color: #49689f;
+    animation-name: colorChangeTop;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
-.circles::after {
+.circles_bottom{
+    content: "";
+    position: fixed;
+    left: -50vmin;
+    bottom: -55vmin;
+    width: 100vmin;;
+    height: 100vmin;
+    border-radius: 50%;
+    background-color:#95aef9;
+    animation-name: colorChangeBottom;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    
+}
+/* .circles::after {
     content: "";
     position: inherit;
     left: -50vmin;
@@ -31,6 +48,23 @@ body{
     height: 100vmin;
     border-radius: inherit;
     background-color:#95aef9;
+}  */
+
+@keyframes colorChangeTop{
+    from {
+        background-color: #49689f;
+    }
+    to{
+        background-color: #95aef9;
+    }
+}
+@keyframes colorChangeBottom{
+    from {
+        background-color: #95aef9;
+    }
+    to{
+        background-color: #49689f;
+    }
 }
 .card {
     text-align: center;
@@ -95,7 +129,7 @@ input[type="submit"]:hover {
 .icono {
     position: absolute;
     top: 3vmin;
-    left: 42%;
+    left: 41%;
     right: 0;
     bottom: 0;
 }
@@ -107,5 +141,17 @@ input[type="submit"]:hover {
     .card {
         margin: 0;
         width: 380px;
+    }
+}
+@media(max-width:375px){
+    .icono {  
+        top: 8vmin;    
+        left: 38%;        
+    }
+}
+@media(width:425px){
+    .icono {  
+        top: 8vmin;    
+        left: 41%;        
     }
 }
